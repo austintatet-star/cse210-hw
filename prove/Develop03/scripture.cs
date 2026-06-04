@@ -22,7 +22,16 @@ public class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-        List<Word> visibleWords = _words.Where(w => !w.IsHidden()).ToList();
+        
+        List<Word> visibleWords = new List<Word>();
+        foreach (Word w in _words)
+        {
+            if (!w.IsHidden())
+            {
+                visibleWords.Add(w);
+            }
+        }
+
         int actualToHide = Math.Min(numberToHide, visibleWords.Count);
 
         for (int i = 0; i < actualToHide; i++)
@@ -35,7 +44,15 @@ public class Scripture
 
     public void RevealRandomWord()
     {
-        List<Word> hiddenWords = _words.Where(w => w.IsHidden()).ToList();
+        List<Word> hiddenWords = new List<Word>();
+        foreach (Word w in _words)
+        {
+            if (w.IsHidden())
+            {
+                hiddenWords.Add(w);
+            }
+        }
+
         if (hiddenWords.Count > 0)
         {
             Random random = new Random();
@@ -58,6 +75,13 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        return _words.All(w => w.IsHidden());
+        foreach (Word w in _words)
+        {
+            if (!w.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

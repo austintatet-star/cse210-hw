@@ -11,7 +11,9 @@ using System;
 //    pressing Enter. The program will temporarily reveal one hidden word to assist 
 //    them if they get stuck mid-memorization.
 // ===================================================================================
-//I also missed the group meeting again. I did this by myself.
+//I thought I had missed the group meeting, but I had actually done this a week early. I did this by myself.
+//I replaced the lambdas. I apologize. I was not sure what lambdas were.
+//I was just using what I found on reddit, youtube, and the internet.
 
 class Program
 {
