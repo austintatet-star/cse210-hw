@@ -9,6 +9,14 @@ public class Activity
     protected int _activityLength;
     protected Random RandomChoice = new Random();
 
+    private static Dictionary<string, int> _activityCounts = new Dictionary<string, int> 
+    { 
+        { "Breathing Activity", 0 }, 
+        { "Reflection Activity", 0 }, 
+        { "Enumeration Activity", 0 } 
+    };
+    private static int _totalSecondsSpent = 0;
+
     public Activity(int activityLength)
     {
         _activityLength = activityLength;
@@ -54,6 +62,7 @@ public class Activity
 
     public void DisplayEnd()
     {
+        LogSession();
         Console.WriteLine("\nWell done!!");
         DisplayTimer(3);
         Console.WriteLine($"You have completed another {_activityLength} seconds of the {_name}.");
@@ -80,5 +89,28 @@ public class Activity
     protected void SetName(string name)
     {
         _name = name;
+    }
+
+    public static void DisplaySessionStats()
+    {
+        Console.Clear();
+        Console.WriteLine("--- Current Session Statistics ---");
+        foreach (KeyValuePair<string, int> record in _activityCounts)
+        {
+            Console.WriteLine($"{record.Key}: Completed {record.Value} times.");
+        }
+        Console.WriteLine($"Total mindfulness time accumulated: {_totalSecondsSpent} seconds.");
+        Console.WriteLine("----------------------------------");
+        Console.WriteLine("\nPress enter to return to the menu.");
+        Console.ReadLine();
+    }
+
+    protected void LogSession()
+    {
+        if (_activityCounts.ContainsKey(_name))
+        {
+            _activityCounts[_name] = _activityCounts[_name] + 1;
+        }
+        _totalSecondsSpent = _totalSecondsSpent + _activityLength;
     }
 }

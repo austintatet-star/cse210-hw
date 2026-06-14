@@ -12,7 +12,8 @@ class Program
             Console.WriteLine("  1. Start breathing activity");
             Console.WriteLine("  2. Start reflection activity");
             Console.WriteLine("  3. Start enumeration activity");
-            Console.WriteLine("  4. Quit");
+            Console.WriteLine("  4. View session statistics");
+            Console.WriteLine("  5. Quit");
             Console.Write("Select a choice from the menu: ");
             
             string choice = Console.ReadLine();
@@ -33,6 +34,10 @@ class Program
                 enumeration.ChooseActivities();
             }
             else if (choice == "4")
+            {
+                Activity.DisplaySessionStats();
+            }
+            else if (choice == "5")
             {
                 keepRunning = false;
             }
