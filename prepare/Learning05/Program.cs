@@ -1,51 +1,30 @@
 using System;
+using System.Collections.Generic;
 
-namespace Learning03
+namespace Learning05
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--- Testing Constructors ---");
+            List<Shape> shapes = new List<Shape>();
 
-            Fraction f1 = new Fraction();
-            Console.WriteLine(f1.GetFractionString());
-            Console.WriteLine(f1.GetDecimalValue());
+            Square mySquare = new Square("Red", 5.0);
+            shapes.Add(mySquare);
 
-            Fraction f2 = new Fraction(5);
-            Console.WriteLine(f2.GetFractionString());
-            Console.WriteLine(f2.GetDecimalValue());
+            Rectangle myRectangle = new Rectangle("Blue", 4.0, 6.0);
+            shapes.Add(myRectangle);
 
-            Fraction f3 = new Fraction(3, 4);
-            Console.WriteLine(f3.GetFractionString());
-            Console.WriteLine(f3.GetDecimalValue());
+            Circle myCircle = new Circle("Green", 3.0);
+            shapes.Add(myCircle);
 
-            Fraction f4 = new Fraction(1, 3);
-            Console.WriteLine(f4.GetFractionString());
-            Console.WriteLine(f4.GetDecimalValue());
-
-            Console.WriteLine("\n--- Testing Getters & Setters ---");
-            Fraction testGetSet = new Fraction();
-            testGetSet.SetTop(6);
-            testGetSet.SetBottom(7);
-            Console.WriteLine($"Retrieved Top: {testGetSet.GetTop()}");
-            Console.WriteLine($"Retrieved Bottom: {testGetSet.GetBottom()}");
-            Console.WriteLine($"Updated Fraction: {testGetSet.GetFractionString()}");
-
-            Console.WriteLine("\n--- Running Random Loop Practice ---");
-            
-            Fraction randomFraction = new Fraction();
-            Random rand = new Random();
-
-            for (int i = 1; i <= 20; i++)
+            Console.WriteLine("--- Shape Portfolio ---");
+            foreach (Shape shape in shapes)
             {
-                int randomTop = rand.Next(1, 21);
-                int randomBottom = rand.Next(1, 21);
+                string color = shape.GetColor();
+                double area = shape.GetArea();
 
-                randomFraction.SetTop(randomTop);
-                randomFraction.SetBottom(randomBottom);
-
-                Console.WriteLine($"Fraction {i}: string: {randomFraction.GetFractionString()} Number: {randomFraction.GetDecimalValue()}");
+                Console.WriteLine($"The {color} shape has an area of {area:F2}.");
             }
         }
     }
