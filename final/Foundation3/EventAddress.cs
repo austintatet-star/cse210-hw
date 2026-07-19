@@ -1,15 +1,20 @@
 public class EventAddress
 {
-    // TODO: Add private string attributes for street, city, state, zip code
+    private string _street;
+    private string _city;
+    private string _state;
+    private string _zipCode;
 
-    public EventAddress()
+    public EventAddress(string street, string city, string state, string zipCode)
     {
-        // TODO: Add constructor parameters to initialize variables
+        _street = street;
+        _city = city;
+        _state = state;
+        _zipCode = zipCode;
     }
 
     public string GetFormattedAddress()
     {
-        // TODO: Return your address variables combined into one string
-        return "";
+        return $"{_street}, {_city}, {_state} {_zipCode}";
     }
 }

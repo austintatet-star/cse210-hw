@@ -6,20 +6,16 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("--- PROGRAM 4: POLYMORPHISM WITH EXERCISE TRACKING ---");
-        Console.WriteLine("[Skeleton application structure - complete implementation required]");
+        
+        List<Activity> activityList = new List<Activity>();
 
-        // // Create a polymorphic list to hold all your activities
-        // List<Activity> activityList = new List<Activity>();
+        activityList.Add(new Running("18 Jul 2026", 30, 3.0f));
+        activityList.Add(new Cycling("19 Jul 2026", 45, 12.0f));
+        activityList.Add(new Swimming("20 Jul 2026", 20, 24));
 
-        // // Instantiate one of each activity type and add them to the list
-        // activityList.Add(new Running(attributes));
-        // activityList.Add(new Cycling(attributes));
-        // activityList.Add(new Swimming(attributes));
-
-        // // Iterate through the list and print the summaries using polymorphism
-        // foreach (Activity activity in activityList)
-        // {
-        //     Console.WriteLine(activity.GetSummary());
-        // }
+        foreach (Activity activity in activityList)
+        {
+            Console.WriteLine(activity.GetSummary());
+        }
     }
 }

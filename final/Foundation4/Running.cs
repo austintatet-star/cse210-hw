@@ -1,27 +1,25 @@
 public class Running : Activity
 {
-    // TODO: Add a private float attribute for distance in miles/km
+    private float _distanceInMiles;
 
-    public Running() : base() // TODO: Pass base attributes up to parent constructor
+    public Running(string date, int lengthInMinutes, float distanceInMiles) 
+        : base(date, lengthInMinutes)
     {
-        // TODO: Initialize specific Running variable
+        _distanceInMiles = distanceInMiles;
     }
 
     public override float GetDistance()
     {
-        // TODO: Return stored distance value
-        return 0;
+        return _distanceInMiles;
     }
 
     public override float GetSpeed()
     {
-        // TODO: Calculate and return running speed
-        return 0;
+        return (_distanceInMiles / GetLengthInMinutes()) * 60.0f;
     }
 
     public override float GetPace()
     {
-        // TODO: Calculate and return running pace
-        return 0;
+        return GetLengthInMinutes() / _distanceInMiles;
     }
 }

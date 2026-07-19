@@ -1,27 +1,25 @@
 public class Cycling : Activity
 {
-    // TODO: Add a private float attribute for speed in mph/kph
+    private float _speedInMph;
 
-    public Cycling() : base() // TODO: Pass base attributes up to parent constructor
+    public Cycling(string date, int lengthInMinutes, float speedInMph) 
+        : base(date, lengthInMinutes)
     {
-        // TODO: Initialize specific Cycling variable
+        _speedInMph = speedInMph;
     }
 
     public override float GetDistance()
     {
-        // TODO: Calculate and return cycling distance
-        return 0;
+        return (_speedInMph * GetLengthInMinutes()) * 60.0f;
     }
 
     public override float GetSpeed()
     {
-        // TODO: Return stored speed value
-        return 0;
+        return _speedInMph;
     }
 
     public override float GetPace()
     {
-        // TODO: Calculate and return cycling pace
-        return 0;
+        return 60.0f / _speedInMph;
     }
 }

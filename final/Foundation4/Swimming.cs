@@ -1,27 +1,25 @@
 public class Swimming : Activity
 {
-    // TODO: Add a private int attribute for the number of laps swum
+    private int _numberOfLaps;
 
-    public Swimming() : base() // TODO: Pass base attributes up to parent constructor
+    public Swimming(string date, int lengthInMinutes, int numberOfLaps) 
+        : base(date, lengthInMinutes)
     {
-        // TODO: Initialize specific Swimming variable
+        _numberOfLaps = numberOfLaps;
     }
 
     public override float GetDistance()
     {
-        // TODO: Calculate distance based on number of laps (50 meters per lap)
-        return 0;
+        return (_numberOfLaps * 50.0f) / 1000.0f * 0.62f;
     }
 
     public override float GetSpeed()
     {
-        // TODO: Calculate and return swimming speed
-        return 0;
+        return (GetDistance() / GetLengthInMinutes()) * 60.0f;
     }
 
     public override float GetPace()
     {
-        // TODO: Calculate and return swimming pace
-        return 0;
+        return GetLengthInMinutes() / GetDistance();
     }
 }

@@ -1,15 +1,15 @@
 public class Reception : Event
 {
-    // TODO: Add a private string attribute for the RSVP email
+    private string _rsvpEmail;
 
-    public Reception() : base() // TODO: Pass base attributes up to the parent constructor
+    public Reception(string title, string description, string date, string time, EventAddress address, string rsvpEmail) 
+        : base(title, description, date, time, address)
     {
-        // TODO: Initialize specific Reception variables
+        _rsvpEmail = rsvpEmail;
     }
 
     public string GetFullDetails()
     {
-        // TODO: Combine GetStandardDetails() with RSVP email details
-        return "";
+        return $"{GetStandardDetails()}\nType: Reception\nRSVP Email: {_rsvpEmail}";
     }
 }

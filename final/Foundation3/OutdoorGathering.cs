@@ -1,15 +1,15 @@
 public class OutdoorGathering : Event
 {
-    // TODO: Add a private string attribute for the weather forecast statement
+    private string _weatherForecast;
 
-    public OutdoorGathering() : base() // TODO: Pass base attributes up to the parent constructor
+    public OutdoorGathering(string title, string description, string date, string time, EventAddress address, string weatherForecast) 
+        : base(title, description, date, time, address)
     {
-        // TODO: Initialize specific OutdoorGathering variables
+        _weatherForecast = weatherForecast;
     }
 
     public string GetFullDetails()
     {
-        // TODO: Combine GetStandardDetails() with weather forecast details
-        return "";
+        return $"{GetStandardDetails()}\nType: Outdoor Gathering\nWeather Forecast: {_weatherForecast}";
     }
 }

@@ -1,22 +1,27 @@
 public class Event
 {
-    // TODO: Add private string attributes for title, description, date, time
-    // TODO: Add a private EventAddress attribute to hold the EventAddress object
+    private string _title;
+    private string _description;
+    private string _date;
+    private string _time;
+    private EventAddress _address;
 
-    public Event()
+    public Event(string title, string description, string date, string time, EventAddress address)
     {
-        // TODO: Add constructor parameters to initialize variables
+        _title = title;
+        _description = description;
+        _date = date;
+        _time = time;
+        _address = address;
     }
 
     public string GetStandardDetails()
     {
-        // TODO: Return string containing title, description, date, time, and address
-        return "";
+        return $"Title: {_title}\nDescription: {_description}\nDate: {_date} at {_time}\nLocation: {_address.GetFormattedAddress()}";
     }
 
     public string GetShortDescription(string eventType)
     {
-        // TODO: Return string containing eventType, title, and date
-        return "";
+        return $"Event Type: {eventType}\nTitle: {_title}\nDate: {_date}";
     }
 }

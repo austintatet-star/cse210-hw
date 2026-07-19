@@ -1,15 +1,17 @@
 public class Lecture : Event
 {
-    // TODO: Add private attributes for speaker name (string) and venue capacity (int)
+    private string _speakerName;
+    private int _venueCapacity;
 
-    public Lecture() : base() // TODO: Pass base attributes up to the parent constructor
+    public Lecture(string title, string description, string date, string time, EventAddress address, string speakerName, int venueCapacity) 
+        : base(title, description, date, time, address)
     {
-        // TODO: Initialize specific Lecture variables
+        _speakerName = speakerName;
+        _venueCapacity = venueCapacity;
     }
 
     public string GetFullDetails()
     {
-        // TODO: Combine GetStandardDetails() with speaker and capacity details
-        return "";
+        return $"{GetStandardDetails()}\nType: Lecture\nSpeaker: {_speakerName}\nCapacity: {_venueCapacity} people";
     }
 }
