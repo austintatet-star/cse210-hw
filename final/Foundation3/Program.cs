@@ -16,21 +16,21 @@ class Program
         OutdoorGathering outdoorEvent = new OutdoorGathering("Community Fun Run", "A casual 5k run through the local park trails.", "09/05/2026", "8:00 AM", address3, "Sunny with a light breeze, high of 75°F");
 
         Console.WriteLine("========================================");
-        Console.WriteLine(lectureEvent.GetStandardDetails());
+        Console.WriteLine(lectureEvent); 
         Console.WriteLine();
         Console.WriteLine(lectureEvent.GetFullDetails());
         Console.WriteLine();
         Console.WriteLine(lectureEvent.GetShortDescription("Lecture"));
         Console.WriteLine("========================================");
 
-        Console.WriteLine(receptionEvent.GetStandardDetails());
+        Console.WriteLine(receptionEvent); 
         Console.WriteLine();
         Console.WriteLine(receptionEvent.GetFullDetails());
         Console.WriteLine();
         Console.WriteLine(receptionEvent.GetShortDescription("Reception"));
         Console.WriteLine("========================================");
 
-        Console.WriteLine(outdoorEvent.GetStandardDetails());
+        Console.WriteLine(outdoorEvent); 
         Console.WriteLine();
         Console.WriteLine(outdoorEvent.GetFullDetails());
         Console.WriteLine();

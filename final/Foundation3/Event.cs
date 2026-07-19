@@ -24,4 +24,9 @@ public class Event
     {
         return $"Event Type: {eventType}\nTitle: {_title}\nDate: {_date}";
     }
+
+    public override string ToString()
+    {
+        return GetStandardDetails();
+    }
 }
