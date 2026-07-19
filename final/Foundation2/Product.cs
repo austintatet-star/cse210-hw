@@ -18,6 +18,11 @@ public class Product
         return _pricePerUnit * _quantity;
     }
 
+    public string GetFormattedPrice()
+    {
+        return $"${CalculateProductTotal():F2}";
+    }
+
     public string GetName()
     {
         return _name;

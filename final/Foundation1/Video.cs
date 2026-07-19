@@ -16,6 +16,11 @@ public class Video
         _comments = new List<Comment>();
     }
 
+    private string GetTruncatedTitle()
+    {
+        return _title.Length > 20 ? _title.Substring(0, 17) + "..." : _title;
+    }
+
     public void AddComment(Comment comment)
     {
         _comments.Add(comment);
@@ -28,7 +33,7 @@ public class Video
 
     public void DisplayVideoDetails()
     {
-        Console.WriteLine($"\nTitle: {_title}");
+        Console.WriteLine($"\nTitle: {GetTruncatedTitle()}");
         Console.WriteLine($"Author: {_author}");
         Console.WriteLine($"Length: {_lengthInSeconds} seconds");
         Console.WriteLine($"Number of Comments: {GetCommentCount()}");

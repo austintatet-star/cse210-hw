@@ -40,4 +40,9 @@ public class Activity
     {
         return $"{_date} {this.GetType().Name} ({_lengthInMinutes} min) - Distance: {GetDistance():F1} miles, Speed: {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile";
     }
+
+    public override string ToString()
+    {
+        return GetSummary();
+    }
 }
