@@ -1,3 +1,7 @@
+// Exceeding Requirements:
+// Added a 'Mood' rating feature (1-5 scale) to each journal entry, 
+// which is saved to and restored from the data file.
+
 using System;
 
 class Program
