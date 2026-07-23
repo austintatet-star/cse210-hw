@@ -13,10 +13,25 @@ public class ChecklistGoal : Goal
         _bonus = bonus;
     }
 
-    public int GetAmountCompleted() => _amountCompleted;
-    public int GetTarget() => _target;
-    public int GetBonus() => _bonus;
-    public void SetAmountCompleted(int amount) => _amountCompleted = amount;
+    public int GetAmountCompleted()
+    {
+        return _amountCompleted;
+    }
+
+    public int GetTarget()
+    {
+        return _target;
+    }
+
+    public int GetBonus()
+    {
+        return _bonus;
+    }
+
+    public void SetAmountCompleted(int amount)
+    {
+        _amountCompleted = amount;
+    }
 
     public override int RecordEvent()
     {
@@ -39,7 +54,7 @@ public class ChecklistGoal : Goal
         return _amountCompleted >= _target;
     }
 
-public override string GetDetailsString()
+    public override string GetDetailsString()
     {
         string statusSymbol = IsComplete() ? "X" : " ";
         return $"[{statusSymbol}] {_shortName} ({_description}) -- Currently completed: {_amountCompleted}/{_target}";

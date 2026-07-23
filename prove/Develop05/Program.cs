@@ -2,6 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
+// ===================================================================================
+// CREATIVITY & EXCEEDING REQUIREMENTS
+// 1. INPUT VALIDATION: Added input checks using int.TryParse across all menu selections, 
+//    point entries, and checklist parameters to prevent program crashes on invalid input.
+// 2. ERROR HANDLING: Implemented file existence checks and try/catch blocks during 
+//    file saving and loading operations to handle missing or malformed files gracefully.
+// ===================================================================================
+
 class Program
 {
     private static List<Goal> _goals = new List<Goal>();
@@ -193,7 +201,7 @@ class Program
         Console.WriteLine("The goals are:");
         for (int i = 0; i < _goals.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i].ShortName}"); 
+            Console.WriteLine($"{i + 1}. {_goals[i].GetShortName()}"); 
         }
         
         Console.Write("Which goal did you accomplish? ");
